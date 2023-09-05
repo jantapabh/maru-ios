@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1016008093976",
+    "project_id": "kangyong-laundry",
+    "storage_bucket": "kangyong-laundry.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016008093976:android:af9cd10586782fd16e2e6d",
+        "android_client_info": {
+          "package_name": "com.jantapa.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016008093976-ibfge2caem7ash543u6o0ev4r28j98vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGE3Cn9F_twjKN_v4lm9E4-M3oSSxbMPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016008093976-ibfge2caem7ash543u6o0ev4r28j98vu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1016008093976-c88kv6807p4fq21sr6j4jv57i0o27983.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jantapa.myapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
