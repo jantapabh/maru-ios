@@ -272,7 +272,7 @@ const PaymentPage = (props) => {
           </TouchableHighlight>
 
           {/* pay with api */}
-          <TouchableHighlight
+          {/* <TouchableHighlight
             style={styles.box}
             underlayColor={COLORS.white}
             onPress={payWithAPI}
@@ -280,7 +280,7 @@ const PaymentPage = (props) => {
             <View style={{ display: "flex", flexDirection: "row" }}>
               <Text style={styles.textStyle}>จ่ายเงิน</Text>
             </View>
-          </TouchableHighlight>
+          </TouchableHighlight> */}
         </View>
       </View>
     </SafeAreaView>

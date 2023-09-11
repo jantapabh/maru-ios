@@ -55,6 +55,7 @@ import jwt_decode from "jwt-decode";
 import PaymentCredit from "./screen/HomePage/PaymentCredit";
 import FormPaymentCredit from "./screen/HomePage/FormPaymentCredit";
 import SelectPaymentCredit from "./screen/HomePage/SelectPaymentCredit";
+import ScanQR from "./screen/HomePage/ScanQR/ScanQR";
 
 // local
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -529,6 +530,35 @@ const App = (props) => {
           })}
           component={ProgramDetail}
         />
+         <Stack.Screen
+          name="สแกนเครื่อง"
+          options={({ navigation, route }) => ({
+            // headerBackImage: () => <SvgArrowNormal />,
+            headerBackImage: () => (
+              <SvgArrowNormal
+                style={{ marginLeft: Platform.OS === "ios" ? 15 : 0 }}
+              />
+            ),
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#AB4740",
+              borderBottomWidth: 0,
+              borderBottomColor: "#AB4740",
+            },
+            headerShown: true,
+            headerTitle: "สแกนเครื่อง",
+            headerTitleStyle: {
+              color: "#fff",
+              fontFamily: "Prompt_600SemiBold",
+            },
+            headerStyle: {
+              backgroundColor: "#AB4740",
+            },
+            headerTitleAlign: "center",
+          })}
+          component={ScanQR}
+        />
+        
         {/* ไปหน้าอื่นแบบไม่มี tab */}
         <Stack.Screen
           name="ข้อมูลส่วนตัว"
