@@ -83,6 +83,15 @@ const HomePageMain = (props) => {
   useEffect(() => {
     handleToggleModalSuccess()
   }, [myDevice])
+
+  // get access to camera
+  useEffect(() => {
+    (async () => {
+      // const { status } = await Camera.requestCameraPermissionsAsync();
+      const { status } = await Permissions.askAsync(Permissions.CAMERA);
+      setHasCameraPermission(status === 'granted');
+    })();
+  }, []);
   
   // get location
   useEffect(() => {
@@ -360,7 +369,93 @@ const HomePageMain = (props) => {
               {/* )} */}
             </View>
 
+            {transaction_success && (
+              <TouchableHighlight
+                style={styles.boxAdd}
+                underlayColor={COLORS.primary}
+                onPress={() => props.navigation.navigate("สแกนเครื่อง")}
+              >
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <Ionicons name="md-add" size={27} color="black" />
+                  <Text
+                    style={{ fontSize: 16, fontFamily: "Prompt_500Medium" }}
+                  >
+                    ซักเพิ่ม
+                  </Text>
+                </View>
+              </TouchableHighlight>
+            )}
+            
           </View>
+
+          {!transaction_success && ( 
+            <Card style={styles.scan}>
+              <TouchableHighlight
+                onPress={() => props.navigation.navigate("สแกนเครื่อง")}
+                underlayColor={COLORS.black}
+                style={{
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Image
+                    source={require("assets/scanqr_code.png")}
+                    resizeMode={Platform.OS === "ios" ? "contain" : "center"}
+                    style={{
+                      width: 68,
+                      height: 79,
+                    }}
+                  />
+
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      marginTop: 13,
+                      marginLeft: 5,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontSize: 20,
+                        fontFamily: "Prompt_800ExtraBold",
+                        color: COLORS.white,
+                      }}
+                    >
+                      {" "}
+                      สแกน QR
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: 20,
+                        fontFamily: "Prompt_800ExtraBold",
+                        color: COLORS.white,
+                      }}
+                    >
+                      {" "}
+                      เริ่มการซัก
+                    </Text>
+                  </View>
+                </View>
+              </TouchableHighlight>
+            </Card>
+          )} 
 
           {myDevice?.length > 0 &&
             myDevice?.map((item) => {
