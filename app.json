@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "MaruLaundry",
-    "slug": "MaruLaundry",
-    "version": "1.0.0",
-    "scheme": "MaruLaundry",
+    "name": "maru",
+    "slug": "maru",
+    "version": "2.3.1",
+    "scheme": "maru",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "platforms": [
@@ -21,7 +21,7 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.jantapa.MaruLaundry",
+      "bundleIdentifier": "com.jantapa.maru",
       "buildNumber": "1.0.0",
       "googleServicesFile": "./GoogleService-Info.plist",
       "config": {
@@ -31,9 +31,7 @@
         "UIBackgroundModes": [
           "fetch",
           "location"
-        ],
-        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to access your photos.",
-        "NSPhotoLibraryAddUsageDescription": "Allow $(PRODUCT_NAME) to save photos."
+        ]
       }
     },
     "android": {
@@ -42,9 +40,9 @@
         "foregroundImagre": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.jantapa.MaruLaundry",
+      "package": "com.jantapa.maru",
       "config": {
-        "googleServicesFile": "./google-services.json",
+        "googleServicesFile": "google-services.json",
         "googleMaps": {
           "apiKey": "AIzaSyDSDGjQBDUD5AdeX9J1DfHCV_CUmve0HMc"
         }
@@ -61,11 +59,11 @@
       ]
     },
     "web": {
-      "package": "com.jantapa.MaruLaundry"
+      "package": "com.jantapa.maru"
     },
     "extra": {
       "eas": {
-        "projectId": "39075e10-a645-4766-884b-bf4d359ab141"
+        "projectId": "d7fca23f-e258-40e9-9ca5-2b853aee66d0"
       }
     },
     "plugins": [
@@ -104,7 +102,6 @@
           "isAccessMediaLocationEnabled": true
         }
       ]
-    ],
-    "owner": "jantapa"
+    ]
   }
 }

@@ -87,7 +87,7 @@ const ListProgram = (props) => {
                       lineHeight: 28,
                     }}
                   >
-                    เครื่องหมายเลข {deviceId}
+                    เครื่องหมายเลข {dataItem?.id}
                   </Text>
                   <View
                     style={{

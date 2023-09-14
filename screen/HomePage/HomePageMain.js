@@ -19,6 +19,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect, useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Location from "expo-location";
+import { Ionicons } from "@expo/vector-icons";
+
 // fonst
 import {
   useFonts,
@@ -52,6 +54,7 @@ const HomePageMain = (props) => {
   const [minuteTimeTOCal, setMinuteTimeTOCal] = useState(0);
   const [isModalSuccessVisible, setModalSuccessVisible] = useState(false);
   const [deviceSuccess, setDeviceSuccess] = useState([]);
+  const [deviceIDdaya, setDeviceIDdata] = useState("");
 
   let [fontsLoaded, error] = useFonts({
     Prompt_500Medium,
@@ -78,6 +81,11 @@ const HomePageMain = (props) => {
   useEffect(() => {
     getMyDeviceDataInProcess();
   }, [])
+
+   // get my device
+   useEffect(() => {
+    console.log('DEVICE ID ====> ',unit_no, deviceId);
+  }, [unit_no, deviceId])
 
   // check my device when success
   useEffect(() => {

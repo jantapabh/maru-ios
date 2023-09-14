@@ -293,12 +293,11 @@ const ProgramDetail = (props) => {
       })
         .then((response) => response.json())
         .then((responseJson) => {
-          console.log('responseJsonresponseJsonresponseJson XXX ==> ',responseJson?.result);
           if (responseJson?.result) {
-            // Alert.alert("เสร็จสิ้น");
             props.navigation.navigate("หน้าแรก", {
               transaction_success: true,
-              unit_no: itemCourse?.unit_no,
+              unit_no: itemCourse?.id,
+              deviceId: itemCourse?.id
             });
           }
         })
@@ -431,7 +430,7 @@ const ProgramDetail = (props) => {
                       lineHeight: 28,
                     }}
                   >
-                    เครื่องหมายเลข {itemCourse?.unit_no}
+                    เครื่องหมายเลข {itemCourse?.id}
                   </Text>
 
                   <View
